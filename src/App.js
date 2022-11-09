@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import UsingReff from "./hooks/UsingRef";
+import UsingEffect from "./hooks/UsingEffect";
+import UsingReducer from "./hooks/UsingReducer";
+import UsingState from "./hooks/UsingState";
+import UsingLayout from "./hooks/UsingLayout";
+import Context from "./hooks/UseContext/Context";
+import Callback from "./hooks/UseCallBack/Callback";
+import UseMemo from "./hooks/UseMemo";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Routes>
+          <Route>
+            <Route path="useeffect" element={<UsingEffect />} />
+            <Route path="useRef" element={<UsingReff />} />
+            <Route path="usereducer" element={<UsingReducer />} />
+            <Route path="usestate" element={<UsingState />} />
+            <Route path="useLayoutEffect" element={<UsingLayout />} />
+            <Route path="context" element={<Context />} />
+            <Route path="callback" element={<Callback />} />
+            <Route path="useMemo" element={<UseMemo />} />
+          </Route>
+        </Routes>
       </header>
     </div>
   );
